@@ -1,0 +1,10 @@
+<div class="navigation">
+  <div class="profile">
+    <h1>{{topic}}</h1>
+  </div>
+  <mat-nav-list class="item-list">
+    <a mat-list-item class="item" routerLinkActive="item-active" *ngFor="let item of items" routerLink={{item.url}}>
+      {{ item.name }}
+    </a>
+  </mat-nav-list>
+</div>

@@ -1,0 +1,10 @@
+<mat-drawer-container class="container">
+  <mat-drawer class="drawer" [mode]="drawerMode" [opened]="opened" #drawer>
+    <profile-navigation [drawer]="drawer"></profile-navigation>
+  </mat-drawer>
+  <profile-header [drawer]="drawer"></profile-header>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <profile-footer></profile-footer>
+</mat-drawer-container>

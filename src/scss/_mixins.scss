@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+@mixin scroll-bar($width: 5px, $height: 5px, $foreground-color: map.get($primary-palette, 900), $background-color: map.get($primary-palette, 500)) {
+  &::-webkit-scrollbar {
+    width:  $width;
+    height: $height;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $foreground-color;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: $background-color;
+  }
+  
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin media-breakpoint-up($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($minSize, $maxSize) {
+  @media (min-width: $minSize) and (max-width: $maxSize) {
+    @content;
+  }
+}

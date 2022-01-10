@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "src/scss/variables" as *;
+
+.navigation {
+  min-height: 100%;
+  background-color: map.get($primary-palette, 500);
+  color: map.get(map.get($primary-palette, contrast), 500);
+}
+
+.profile {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  h1 {
+    margin: 0px;
+  }
+}
+
+.item-list {
+  padding-top: 0px;
+  .item {
+    &:hover {
+      background-color: map.get($primary-palette, 700);
+    }
+  }
+}
+
+.item-active {
+  background-color: map.get($primary-palette, 700);
+}

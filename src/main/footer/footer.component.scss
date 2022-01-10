@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "src/scss/mixins" as *;
+@use "src/scss/variables" as *;
+
+.footer {
+  min-height: 100px;
+  @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+    margin-bottom: 70px;
+  }
+  @include media-breakpoint-down(map.get(map.get($breakpoints, sm), end)) {
+    padding: 16px;
+    min-height: 50px;
+    flex-direction: column;
+  }
+  display: flex;
+  padding: 0px 16px;
+  flex-direction: row;
+  background-color: map.get($accent-palette, 900);
+  color: map.get(map.get($accent-palette, contrast), 500);
+  div:first-child {
+    @include media-breakpoint-down(map.get(map.get($breakpoints, sm), end)) {
+      width: 100%;
+      justify-content: center;
+    }
+    width: 50%;
+    display: flex;
+    font-size: medium;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  div:last-child {
+    @include media-breakpoint-down(map.get(map.get($breakpoints, sm), end)) {
+      width: 100%;
+      justify-content: center;
+    }
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  img {
+    width: 32px;
+  }
+}

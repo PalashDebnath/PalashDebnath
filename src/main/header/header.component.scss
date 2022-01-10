@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "src/scss/mixins" as *;
+@use "src/scss/variables" as *;
+
+.header {
+  padding: 15px 0px;
+  background-color: map.get($accent-palette, 500);
+  @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+    bottom: 0px;
+    position: fixed;
+    overflow-x: scroll;
+    @include scroll-bar(5px, 5px, map.get($accent-palette, 900), map.get($accent-palette, 500));
+    button:first-child {
+      display: none;
+    }
+  }
+}
+
+.mat-button {
+  margin-right: 5px;
+  min-width: auto;
+  &:hover {
+    background-color: map.get($accent-palette, 900);
+  }
+}
+
+.mat-fab {
+  right: 20px;
+  bottom: 80px;
+  position: fixed;
+  @include media-breakpoint-up(map.get(map.get($breakpoints, xs), end)) {
+    display: none;
+  }
+}
+
+.header-link-active {
+  background-color: map.get($accent-palette, 900);
+}
