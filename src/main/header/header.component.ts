@@ -25,11 +25,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if (event.url.includes('design-patterns')) {
+        if (this.router.url.includes('design-patterns')) {
           this.designPattern.onSelected.emit('Design Patterns');
           this.title.setTitle('Design Patterns');
         }
-        else if (event.url.includes('algorithms')) {
+        else if (this.router.url.includes('algorithms')) {
           this.algorithm.onSelected.emit('Algorithms');
           this.title.setTitle('Algorithms');
         }
