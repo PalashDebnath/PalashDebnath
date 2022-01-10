@@ -8,6 +8,7 @@
   @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
     bottom: 0px;
     position: fixed;
+    padding: 10px 0px;
     overflow-x: scroll;
     @include scroll-bar(5px, 5px, map.get($accent-palette, 900), map.get($accent-palette, 500));
     button:first-child {
@@ -26,7 +27,7 @@
 
 .mat-fab {
   right: 20px;
-  bottom: 80px;
+  bottom: 70px;
   position: fixed;
   @include media-breakpoint-up(map.get(map.get($breakpoints, xs), end)) {
     display: none;

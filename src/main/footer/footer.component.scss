@@ -5,7 +5,7 @@
 .footer {
   min-height: 100px;
   @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
   }
   @include media-breakpoint-down(map.get(map.get($breakpoints, sm), end)) {
     padding: 16px;

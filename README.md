@@ -1,7 +1,7 @@
-# Design Patterns
+### design-patterns
 
 Defination and implementation of Design Patterns. 
 
-# Algorithms
+### algorithms
 
 Logical explanation and implementation of Algorithms. 
