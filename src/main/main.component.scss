@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "src/scss/mixins" as *;
+@use "src/scss/variables" as *;
+
 .container {
   width: 100%;
   height: 100%;
@@ -11,4 +15,7 @@
 .content {
   height: 100%;
   padding: 0px 16px;
+  @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+    padding: 20px 16px 16px 16px;
+  }
 }

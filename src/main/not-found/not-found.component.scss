@@ -1,7 +1,14 @@
+@use "sass:map";
+@use "src/scss/mixins" as *;
+@use "src/scss/variables" as *;
+
 .content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+    margin-top: 60%;
+  }
   img {
     max-height: 600px;
     max-width: 100%;
