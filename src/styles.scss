@@ -4,11 +4,11 @@
 @use 'scss/variables' as *;
 @use '@angular/material' as mat;
 
-$profile-typography: mat.define-typography-config(
+$main-typography: mat.define-typography-config(
   $font-family: $font-family,
 );
 
-$profile-theme: mat.define-light-theme((
+$main-theme: mat.define-light-theme((
  color: (
    primary: mat.define-palette($primary-palette),
    accent: mat.define-palette($accent-palette),
@@ -16,13 +16,13 @@ $profile-theme: mat.define-light-theme((
 ));
 
 // Emit theme-dependent styles for common features used across multiple components.
-@include mat.core-theme($profile-theme);
-@include mat.core($profile-typography);
+@include mat.core-theme($main-theme);
+@include mat.core($main-typography);
 // Emit styles for MatButton based on `$my-theme`. Because the configuration
 // passed to `define-light-theme` omits typography, `button-theme` will not
 // emit any typography styles.
-@include mat.button-theme($profile-theme);
-@include mat.button-typography($profile-typography);
+@include mat.button-theme($main-theme);
+@include mat.button-typography($main-typography);
 
 html, body { 
   height: 100%;
@@ -30,7 +30,6 @@ html, body {
 
 body { 
   margin: 0;
-  background-color: map.get($accent-palette, 500);
   font-family: 'Comfortaa', cursive;
 }
 

@@ -3,8 +3,8 @@
 @use "src/scss/variables" as *;
 
 .header {
+  z-index: 2;
   padding: 15px 0px;
-  background-color: map.get($accent-palette, 500);
   @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
     bottom: 0px;
     position: fixed;
@@ -33,6 +33,7 @@
 }
 
 .mat-fab {
+  z-index: 2;
   right: 20px;
   bottom: 70px;
   position: fixed;

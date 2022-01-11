@@ -2,14 +2,15 @@
 @use "src/scss/variables" as *;
 
 .navigation {
+  width: 270px;
   min-height: 100%;
   background-color: map.get($primary-palette, 500);
   color: map.get(map.get($primary-palette, contrast), 500);
 }
 
 .profile {
-  padding: 20px 10px;
   display: flex;
+  padding: 20px 16px;
   align-items: center;
   h1 {
     margin: 0px;

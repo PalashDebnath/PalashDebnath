@@ -1,45 +1,66 @@
 import { EventEmitter } from '@angular/core';
 
-type Item = {
+export type Item = {
   name: string,
   url: string
 }
 
 export class DesignPatternService {
   private items: Item[] = [
-    { name: 'Single responsibility', url: '/design-patterns/single-responsibility-principle' },
-    { name: 'Open close', url: '/design-patterns/open-close-principle' },
-    { name: 'Liskov substitution', url: '/design-patterns/liskov-substitution-principle' },
-    { name: 'Interface segregation', url: '/design-patterns/interface-segregation-principle' },
-    { name: 'Dependency inversion', url: '/design-patterns/dependency-inversion-priciple' },
-    { name: 'Builder', url: '/design-patterns/builder' },
-    { name: 'Factory', url: '/design-patterns/factory' },
-    { name: 'Prototype', url: '/design-patterns/prototype' },
-    { name: 'Singleton', url: '/design-patterns/singleton' },
-    { name: 'Adapter', url: '/design-patterns/adapter' },
-    { name: 'Bridge', url: '/design-patterns/bridge' },
-    { name: 'Composite', url: '/design-patterns/composite' },
-    { name: 'Decorator', url: '/design-patterns/decorator' },
-    { name: 'Facade', url: '/design-patterns/facade' },
-    { name: 'Flyweight', url: '/design-patterns/flyweight' },
-    { name: 'Proxy', url: '/design-patterns/proxy' },
-    { name: 'Chain of responsibility', url: '/design-patterns/chain-of-responsibility' },
-    { name: 'Command', url: '/design-patterns/command' },
-    { name: 'Interpretor', url: '/design-patterns/interpretor' },
-    { name: 'Iterator', url: '/design-patterns/iterator' },
-    { name: 'Mediator', url: '/design-patterns/mediator' },
-    { name: 'Memento', url: '/design-patterns/memento' },
-    { name: 'Null object', url: '/design-patterns/null-object' },
-    { name: 'Observer', url: '/design-patterns/observer' },
-    { name: 'State', url: '/design-patterns/state' },
-    { name: 'Strategy', url: '/design-patterns/strategy' },
-    { name: 'Template method', url: '/design-patterns/template-method' },
-    { name: 'Visitor', url: '/design-patterns/visitor' }
+    { name: 'Single Responsibility Principle', url: '/design-patterns/single-responsibility-principle' },
+    { name: 'Open Close Principle', url: '/design-patterns/open-close-principle' },
+    { name: 'Liskov Substitution Principle', url: '/design-patterns/liskov-substitution-principle' },
+    { name: 'Interface Segregation Principle', url: '/design-patterns/interface-segregation-principle' },
+    { name: 'Dependency Inversion Principle', url: '/design-patterns/dependency-inversion-priciple' },
+    { name: 'Builder Pattern', url: '/design-patterns/builder' },
+    { name: 'Factory Method Pattern', url: '/design-patterns/factory-method' },
+    { name: 'Abstract Factory Pattern', url: '/design-patterns/abstract-factory' },
+    { name: 'Prototype Pattern', url: '/design-patterns/prototype' },
+    { name: 'Singleton Pattern', url: '/design-patterns/singleton' },
+    { name: 'Adapter Pattern', url: '/design-patterns/adapter' },
+    { name: 'Bridge Pattern', url: '/design-patterns/bridge' },
+    { name: 'Composite Pattern', url: '/design-patterns/composite' },
+    { name: 'Decorator Pattern', url: '/design-patterns/decorator' },
+    { name: 'Facade Pattern', url: '/design-patterns/facade' },
+    { name: 'Flyweight Pattern', url: '/design-patterns/flyweight' },
+    { name: 'Proxy Pattern', url: '/design-patterns/proxy' },
+    { name: 'Chain Of Responsibility Pattern', url: '/design-patterns/chain-of-responsibility' },
+    { name: 'Command Pattern', url: '/design-patterns/command' },
+    { name: 'Interpretor Pattern', url: '/design-patterns/interpretor' },
+    { name: 'Iterator Pattern', url: '/design-patterns/iterator' },
+    { name: 'Mediator Pattern', url: '/design-patterns/mediator' },
+    { name: 'Memento Pattern', url: '/design-patterns/memento' },
+    { name: 'Null object Pattern', url: '/design-patterns/null-object' },
+    { name: 'Observer Pattern', url: '/design-patterns/observer' },
+    { name: 'State Pattern', url: '/design-patterns/state' },
+    { name: 'Strategy Pattern', url: '/design-patterns/strategy' },
+    { name: 'Template Method Pattern', url: '/design-patterns/template-method' },
+    { name: 'Visitor Pattern', url: '/design-patterns/visitor' }
   ];
 
   onSelected = new EventEmitter<string>();
 
   fetchItems(): Item[] {
     return this.items.slice();
+  }
+
+  fetchSiblingsByUrl(url: string): Item[] {
+    let items: Item[] = [];
+    const index = this.items.findIndex((item) => item.url === url);
+    if (index === -1) {
+      items.push(this.items.slice(0)[0]);
+    }
+    else if (index === 0) {
+      items.push({ name: 'Design Patterns Overview', url: '/design-patterns' });
+      items.push(this.items.slice(index + 1)[0]);
+    }
+    else if (index === this.items.length - 1) {
+      items.push(this.items.slice(index - 1)[0]);
+    }
+    else {
+      items.push(this.items.slice(index - 1)[0]);
+      items.push(this.items.slice(index + 1)[0]);
+    }
+    return items;
   }
 }

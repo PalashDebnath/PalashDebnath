@@ -13,8 +13,8 @@
 }
 
 .content {
-  height: 100%;
   padding: 0px 16px;
+  min-height: 80%;
   @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
     padding: 20px 16px 16px 16px;
   }

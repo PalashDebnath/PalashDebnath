@@ -1,5 +1,130 @@
-<router-outlet>
-  <h1>
-    Design Pattern
-  </h1>
-</router-outlet>
+<div *ngIf="showOverview">
+  <h1>Design Patterns</h1>
+  <p>
+    In software engineering, a software design pattern is a general, reusable solution to a commonly occurring problem
+    within a given context in software design. It is not a finished design that can be transformed directly into source
+    or machine code. Rather, it is a description or template for how to solve a problem that can be used in many
+    different situations. Design patterns are formalized best practices that the programmer can use to solve common
+    problems when designing an application or system.
+  </p>
+  <h1>Classification</h1>
+  <p>
+    Design patterns had originally been categorized into 3 sub-classifications based on what kind of problem they solve.
+  </p>
+  <ul>
+    <li>
+      <b>Creational patterns</b> provide the capability to create objects based on a required criterion and in a
+      controlled
+      way.
+    </li>
+    <li>
+      <b>Structural patterns</b> are about organizing different classes and objects to form larger structures and
+      provide new
+      functionality.
+    </li>
+    <li>
+      <b>Behavioral patterns</b> are about identifying common communication patterns between objects and realizing these
+      patterns.
+    </li>
+  </ul>
+  <div class="classification">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Creational patterns</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li><a routerLink="builder">Builder</a></li>
+          <li><a routerLink="factory-method">Factory Method</a></li>
+          <li><a routerLink="abstract-factory">Abstract Factory</a></li>
+          <li><a routerLink="prototype">Prototype</a></li>
+          <li><a routerLink="singleton">Singleton</a></li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Structural patterns</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li><a routerLink="adapter">Adapter</a></li>
+          <li><a routerLink="bridge">Bridge</a></li>
+          <li><a routerLink="composite">Composite</a></li>
+          <li><a routerLink="decorator">Decorator</a></li>
+          <li><a routerLink="facade">Facade</a></li>
+          <li><a routerLink="flyweight">Flyweight</a></li>
+          <li><a routerLink="proxy">Proxy</a></li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Behavioral patterns</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li><a routerLink="chain-of-responsibility">Chain of responsibility</a></li>
+          <li><a routerLink="command">Command</a></li>
+          <li><a routerLink="interpretor">Interpretor</a></li>
+          <li><a routerLink="iterator">Iterator</a></li>
+          <li><a routerLink="mediator">Mediator</a></li>
+          <li><a routerLink="memento">Memento</a></li>
+          <li><a routerLink="null-object">Null Object</a></li>
+          <li><a routerLink="observer">Observer</a></li>
+          <li><a routerLink="state">State</a></li>
+          <li><a routerLink="strategy">Strategy</a></li>
+          <li><a routerLink="template-method">Template method</a></li>
+          <li><a routerLink="visitor">Visitor</a></li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <h1>S.O.L.I.D</h1>
+  <p>
+    In software engineering, SOLID is a acronym for five design principles intended to make software designs more
+    understandable, flexible, and maintainable.
+  </p>
+  <h1>Concepts</h1>
+  <ul>
+    <li>
+      <a routerLink="single-responsibility-principle">Single responsibility principle</a>: There should never be more
+      than one reason for a class to change. In other
+      words, every class should have only one responsibility.
+    </li>
+    <li>
+      <a routerLink="open-close-principle">Open closed principle</a>: Software entities should be open for extension,
+      but closed for modification.
+    </li>
+    <li>
+      <a routerLink="liskov-substitution-principle">Liskov substitution principle</a>: Functions that use pointers or
+      references to base classes must be able to
+      use
+      objects of derived classes without knowing it.
+    </li>
+    <li>
+      <a routerLink="interface-segregation-principle">Interface segregation principle</a>: Many client-specific
+      interfaces
+      are better than one general-purpose interface.
+    </li>
+    <li>
+      <a routerLink="dependency-inversion-priciple">Dependency inversion principle</a>: Depend upon abstractions, not
+      concrete implementation.
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
+<div class="navigation-button">
+  <div>
+    <button mat-flat-button color="primary" title={{previousItem?.name}} routerLink={{previousItem?.url}}
+      *ngIf="previousItem ? true : false">
+      <mat-icon>navigate_before</mat-icon>{{previousItem?.name}}
+    </button>
+  </div>
+  <div>
+    <button mat-flat-button color="primary" title={{nextItem?.name}} routerLink={{nextItem?.url}}
+      *ngIf="nextItem ? true : false">
+      {{nextItem?.name}}<mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "src/scss/mixins" as *;
+@use "src/scss/variables" as *;
+
+.classification {
+  display: flex;
+  @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+    padding: 16px;
+    min-height: 50px;
+    flex-direction: column;
+  }
+}
+
+a {
+  cursor: pointer;
+  font-size: medium;
+  text-decoration: none;
+  color: map.get($primary-palette, 500);
+}
+
+.navigation-button {
+  @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+    flex-direction: column;
+  }
+  display: flex;
+  padding-bottom: 16px;
+  flex-direction: row;
+  div:first-child {
+    @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+      width: 100%;
+      margin-bottom: 8px;
+      justify-content: center;
+      button {
+        width: inherit;
+      }
+    }
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  div:last-child {
+    @include media-breakpoint-down(map.get(map.get($breakpoints, xs), end)) {
+      width: 100%;
+      margin-top: 8px;
+      justify-content: center;
+      button {
+        width: inherit;
+      }
+    }
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
