@@ -1,9 +1,12 @@
 @use "sass:map";
+@use "src/scss/mixins" as *;
 @use "src/scss/variables" as *;
 
 ol {
   overflow-x: auto;
+  overflow-y: hidden;
   font-family: "Consolas";
+  @include scroll-bar(5px, 5px, map.get($accent-palette, 500), map.get($accent-palette, 50));
 }
 
 ol li {
