@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "src/scss/variables" as *;
+
+ol {
+  overflow-x: auto;
+  font-family: "Consolas";
+}
+
+ol li {
+  margin: 0;
+  white-space: pre;
+  line-height: 18px;
+  padding: 0 3px 0 10px;
+  list-style-position: outside;
+  list-style: decimal-leading-zero;
+  border-left: 3px solid map.get($primary-palette, 500);
+}

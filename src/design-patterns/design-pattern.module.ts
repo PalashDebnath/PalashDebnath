@@ -6,6 +6,7 @@ import { DesignPatternMaterialModule } from './design-pattern-material.module';
 
 import { DesignPatternService } from './services/design-pattern-service';
 
+import { CodeComponent } from './code/code.component';
 import { ProxyComponent } from './proxy/proxy.component';
 import { StateComponent } from './state/state.component';
 import { BridgeComponent } from './bridge/bridge.component';
@@ -35,6 +36,7 @@ import { ChainOfResponsibilityComponent } from './chain-of-responsibility/chain-
 
 @NgModule({
   declarations: [
+    CodeComponent,
     BuilderComponent,
     DesignPatternComponent,
     LiskovSubstitutionComponent,
@@ -60,7 +62,7 @@ import { ChainOfResponsibilityComponent } from './chain-of-responsibility/chain-
     StateComponent,
     StrategyComponent,
     TemplateMethodComponent,
-    VisitorComponent,
+    VisitorComponent
   ],
   imports: [
     CommonModule,

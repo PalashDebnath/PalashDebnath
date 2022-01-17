@@ -22,7 +22,7 @@ $main-theme: mat.define-light-theme((
 // passed to `define-light-theme` omits typography, `button-theme` will not
 // emit any typography styles.
 @include mat.button-theme($main-theme);
-@include mat.button-typography($main-typography);
+@include mat.tabs-theme($main-theme);
 
 html, body { 
   height: 100%;

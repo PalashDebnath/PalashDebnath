@@ -1,1 +1,49 @@
 <h1>Single Responsibility Principle</h1>
+<p>
+  The <b>Single Responsibility Principle (SRP)</b> is a computer-programming principle which state that every module,
+  class or function (method) in a computer program should have responsibility over a single part of that program's
+  functionality, and it should encapsulate that part. On the other hand we could say a class or function (method) should
+  have only one reason to change.
+</p>
+<h1>Manifestation</h1>
+<p>
+  Here we are going to architect an <b>Employee Management System</b>. We will gradually progress on our understanding
+  about the <b>Single Responsibility Priciple (SRP)</b>. At the end we will create an optimal solution for
+  <b>Employee Management System</b>
+</p>
+<mat-tab-group dynamicHeight>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <img src="assets/csharp.svg" alt="c#">
+      C-SHARP
+    </ng-template>
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Imp #1">
+        <profile-code [lines]="impFirst"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #2">
+        <profile-code [lines]="impSecond"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #3">
+        <profile-code [lines]="impThird"></profile-code>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <img src="assets/typescript.svg" alt="typescript">
+      TYPESCRIPT
+    </ng-template>
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Imp #1">
+        <profile-code [lines]="imp1st"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #2">
+        <profile-code [lines]="imp2nd"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #3">
+        <profile-code [lines]="imp3rd"></profile-code>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+</mat-tab-group>
