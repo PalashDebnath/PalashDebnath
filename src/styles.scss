@@ -36,3 +36,7 @@ body {
 .mat-drawer-inner-container {
   @include scroll-bar(5px, 5px);
 }
+
+.language-icon {
+  margin-right: 5px;
+}

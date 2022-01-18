@@ -21,11 +21,18 @@ export class CodeComponent implements OnInit, AfterViewInit {
     let prepandString;
     for (let index = 0; index < this.lines.length; index++) {
       const child = this.renderer.createElement('li');
-      if (this.lines[index].trim() === '}') this.counter -= 1;
+      if (this.lines[index].trim() === '}') {
+        this.counter -= 1;
+      }
       prepandString = this.prepandCharacter.repeat(this.counter * this.indent);
       child.innerText = prepandString + this.lines[index].trim();
+      if (this.lines[index].trim().substring(0, 2) === '//') {
+        this.renderer.addClass(child, 'comment');
+      }
       this.renderer.appendChild(this.ol?.nativeElement, child);
-      if (this.lines[index].trim() === '{') this.counter += 1;
+      if (this.lines[index].trim() === '{') {
+        this.counter += 1;
+      }
     }
   }
 

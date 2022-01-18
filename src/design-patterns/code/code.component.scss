@@ -18,3 +18,7 @@ ol li {
   list-style: decimal-leading-zero;
   border-left: 3px solid map.get($primary-palette, 500);
 }
+
+.comment {
+  color: map.get($primary-palette, 500);
+}

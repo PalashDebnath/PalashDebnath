@@ -1,1 +1,42 @@
-<p>open-close works!</p>
+<h1>Open Close Principle</h1>
+<p>
+  The <b>Open Closed Principle (OCP)</b> states software entities such as classes, modules, functions, etc. should be
+  open for extension, but closed for modification. Means, such an entity can allow its behaviour to be extended without
+  modifying its source code.
+</p>
+<h1>Manifestation</h1>
+<p>
+  Here we are going to architect an <b>Product Filteration System</b>. We will gradually progress on our understanding
+  about the <b>Open Close Priciple (OCP)</b>. At the end we will create an optimal solution for
+  <b>Product Filteration System.</b>
+</p>
+<mat-tab-group dynamicHeight>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <img src="assets/csharp.svg" alt="c#" class="language-icon">
+      C-SHARP
+    </ng-template>
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Imp #1">
+        <profile-code [lines]="impFirst"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #2">
+        <profile-code [lines]="impSecond"></profile-code>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <img src="assets/typescript.svg" alt="typescript" class="language-icon">
+      TYPESCRIPT
+    </ng-template>
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Imp #1">
+        <profile-code [lines]="imp1st"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #2">
+        <profile-code [lines]="imp2nd"></profile-code>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+</mat-tab-group>
