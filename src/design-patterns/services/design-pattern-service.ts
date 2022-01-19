@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export type Item = {
   name: string,
@@ -38,7 +38,9 @@ export class DesignPatternService {
     { name: 'Visitor Pattern', url: '/design-patterns/visitor' }
   ];
 
-  onSelected = new EventEmitter<string>();
+  // In place of EventEmitter uses Subject(observable) from rxjs as they are recommended for emitting new values from service.
+  // onSelected = new EventEmitter<string>();
+  onSelected = new Subject<string>();
 
   fetchItems(): Item[] {
     return this.items.slice();

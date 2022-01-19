@@ -1,6 +1,7 @@
+import { Subscription } from 'rxjs';
 import { MatDrawer } from '@angular/material/sidenav';
-import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { AlgorithmService } from 'src/algorithms/services/algorithm-service';
 import { DesignPatternService } from 'src/design-patterns/services/design-pattern-service';
@@ -10,13 +11,16 @@ import { DesignPatternService } from 'src/design-patterns/services/design-patter
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit, AfterViewInit {
+export class NavigationComponent implements OnInit, AfterViewInit, OnDestroy {
   topic: string = '';
   @Input('drawer')
   drawer: MatDrawer | undefined;
   items: { name: string, url: string }[] = [];
+
   private listenerAdded: boolean = false;
   private clickHandler: Function | undefined;
+  private algorithmSubscription: Subscription | undefined;
+  private designPatternSubscription: Subscription | undefined;
 
   constructor(
     private component: ElementRef,
@@ -26,12 +30,12 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit(): void {
-    this.designPattern.onSelected.subscribe((topic: string) => {
+    this.designPatternSubscription = this.designPattern.onSelected.subscribe((topic: string) => {
       this.topic = topic;
       this.items = this.designPattern.fetchItems();
     });
 
-    this.algorithm.onSelected.subscribe((topic: string) => {
+    this.algorithmSubscription = this.algorithm.onSelected.subscribe((topic: string) => {
       this.topic = topic;
       this.items = this.algorithm.fetchItems();
     });
@@ -57,5 +61,11 @@ export class NavigationComponent implements OnInit, AfterViewInit {
           this.listenerAdded = true;
         }
       });
+  }
+
+  ngOnDestroy(): void {
+    // This is recommanded to unsubscribe manually created observables or subjects when the component destroied.
+    this.algorithmSubscription?.unsubscribe();
+    this.designPatternSubscription?.unsubscribe();
   }
 }

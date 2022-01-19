@@ -26,11 +26,11 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (this.router.url.includes('design-patterns')) {
-          this.designPattern.onSelected.emit('Design Patterns');
+          this.designPattern.onSelected.next('Design Patterns');
           this.title.setTitle('Design Patterns');
         }
         else if (this.router.url.includes('algorithms')) {
-          this.algorithm.onSelected.emit('Algorithms');
+          this.algorithm.onSelected.next('Algorithms');
           this.title.setTitle('Algorithms');
         }
       };

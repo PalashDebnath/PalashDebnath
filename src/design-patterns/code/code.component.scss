@@ -5,7 +5,7 @@
 ol {
   overflow-x: auto;
   overflow-y: hidden;
-  font-family: "Consolas";
+  font-family: "Inconsolata", monospace;
   @include scroll-bar(5px, 5px, map.get($accent-palette, 500), map.get($accent-palette, 50));
 }
 

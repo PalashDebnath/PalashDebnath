@@ -11,7 +11,7 @@ export class CodeComponent implements OnInit, AfterViewInit {
   @ViewChild('ol')
   ol: ElementRef | undefined;
 
-  private indent: number = 4;
+  private indent: number = 2;
   private counter: number = 0;
   private prepandCharacter: string = ' ';
 

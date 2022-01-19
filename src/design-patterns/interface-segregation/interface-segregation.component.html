@@ -1,1 +1,41 @@
-<p>interface-segregation works!</p>
+<h1>Interface Segregation Principle</h1>
+<p>
+  The <b>Interface Segregation Principle (ISP)</b> states that no code should be forced to depend on methods it does not
+  use. Interface Segregation Principle (ISP) splits interfaces that are very large into smaller and more specific ones
+  so that clients will only have to know about the methods that are of interest to them.
+</p>
+<h1>Manifestation</h1>
+<p>
+  Here we are going to architect a <b>Printer System</b>. We will gradually progress on our understanding about the
+  <b>Interface Segregation Priciple (ISP)</b>. At the end we will create an optimal solution for <b>Printer System.</b>
+</p>
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <img src="assets/csharp.svg" alt="c#" class="language-icon">
+      C-SHARP
+    </ng-template>
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Imp #1">
+        <profile-code [lines]="impFirst"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #2">
+        <profile-code [lines]="impSecond"></profile-code>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <img src="assets/typescript.svg" alt="typescript" class="language-icon">
+      TYPESCRIPT
+    </ng-template>
+    <mat-tab-group dynamicHeight selectedIndex="1">
+      <mat-tab label="Imp #1">
+        <profile-code [lines]="impThird"></profile-code>
+      </mat-tab>
+      <mat-tab label="Imp #2">
+        <profile-code [lines]="impFourth"></profile-code>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+</mat-tab-group>
